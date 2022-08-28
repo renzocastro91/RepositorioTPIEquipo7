@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<br>
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/calendar.css' %}" rel="stylesheet">
+<!-- ======= Events Section ======= -->
+<br><br>
+<section id="events" class="events">
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+                    <div class="col-10">
+                            <div id="titulo" class="section-header">
+                              <p>Eve<span>ntos</span></p>
+                            </div>
+                    </div>
+              {% if user.is_staff %}
+                    <div class="col-2">
+                        <a href="{% url 'admin:eventos_evento_add' %}" target="_blank"><button id="boton-agregar">Agregar Evento</button></a> 
+                    </div>
+              {% endif %}
+         </div>
+         </div>     
+         <br><br><br>
+
+      <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          {% for n in eventos %}
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url({{n.imagen.url}})">
+              <h3>{{n.titulo}}</h3>
+              <br>
+              <p class="description">
+                <b>Fecha del evento</b><br> {{n.fecha_evento}}
+              </p>
+              <br>
+              <p class="description">
+                <b>Estado del evento</b><br>{{n.estado}}
+              </p>
+              <br>
+              <p class="description">
+                <a href="{% url 'eventos:mostrar' n.pk %}"><b>Mirar detalles del evento</b></a>
+              </p>
+            </div><!-- End Event item -->
+           {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section><!-- End Events Section -->
+
+  <script src="{% static 'assets/js/calendar.js'%}"></script>
+{% endblock %}
+

@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+ <!-- ======= Hero Section ======= -->
+ <link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+ <section id="hero" class="hero d-flex align-items-center section-bg">
+  <div class="container">
+      <div class="row">
+          <div class="col-10">
+              
+          </div>
+          {% if user.is_staff %}
+          <div class="col-2">
+              <a href="{% url 'admin:index'  %}" target="_blank"><button id="boton-agregar">Entrar al Administrador</button></a> 
+          </div> 
+          {% endif %}
+        </div>
+        <br><br><br>
+    <div class="container">
+      <div class="row justify-content-between gy-5">
+        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+          <h2 data-aos="fade-up">Botella de Amor<br></h2>
+          <p data-aos="fade-up" data-aos-delay="100">Revalorizá los plásticos de un solo uso aportando al cambio</p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="{% url 'usuarios:registro' %}" class="btn-book-a-table">Regístrate</a>
+            <a href="https://www.youtube.com/watch?v=88fHPav2WK4" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Conocenos</span></a>
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+          <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+<br><br><br>
+
+  <section id="publi" class="about">
+    <div id="publi-box" class="container" data-aos="fade-up">
+
+      <div id="titulo"  class="section-header">
+        <p>Publi<span>caciones</span></p>
+      </div>
+      <br><br><br><br><br>
+      <div class="row gy-4">
+        <div id="img-nt" class="col-lg-5 position-relative about-img" style="background-image: url({% static 'assets/img/publcaciones.jpg' %}) ;" data-aos="fade-up" data-aos-delay="150">
+        </div>
+        <div class="col-lg-7 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="content ps-0 ps-lg-5">
+            <b>
+              <p class="fst-italic">
+                Enterate de todas las noticias!, no te pierdas nuestras publicaciones, comenta y hacenos llegar tu opinión, porque todos juntos construímos un mundo mejor!
+              </p>   
+            </b> 
+            <br><br><br><br><br>            
+            <a href="{% url 'noticias:listar_noticias' %}">
+                <div class="section-header">
+                    <p>Haz Click<span> Aquí</span></p>
+                </div>
+                </p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Fin Publicaciones -->
+
+  <br><br><br>
+
+  <section id="eventos" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div id="titulo"  class="section-header">
+        <p>Even<span>tos</span></p>
+      </div>
+      <br><br><br><br><br>
+      <div class="row gy-4">
+        <div id="img-nt" class="col-lg-5 position-relative about-img" style="background-image: url({% static 'assets/img/events-1.jpg' %}) ;" data-aos="fade-up" data-aos-delay="150">
+        </div>
+        <div class="col-lg-7 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="content ps-0 ps-lg-5">
+            <b>
+              <p class="fst-italic">
+                Mantenete informado de todos nuestros eventos, donde y cuándo solo tenés que....
+              </p>
+            </b>
+            <br><br><br><br><br><br>                
+            <a href="{% url 'eventos:principal' %}">
+                <div class="section-header">
+                    <p>Hacer Click<span> Aquí</span></p>
+                </div>
+                </p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Fin eventos -->  
+
+  <br><br><br>
+
+  <section id="galeria" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div id="titulo"  class="section-header">
+        <p>Gale<span>ría</span></p>
+      </div>
+      <br><br><br><br><br>
+      <div class="row gy-4">
+        <div id="img-nt" class="col-lg-6 position-relative about-img" style="background-image: url({% static 'assets/img/galeria.jpg' %}) ;" data-aos="fade-up" data-aos-delay="150">
+        </div>
+        <div class="col-lg-6 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="content ps-0 ps-lg-5">
+            <b>
+              <p class="fst-italic">
+                Vistá nuestra extensa galería de fotos y sección de descarga, para poder participar y estar presente en nuestra galería, solo tenés que ser parte de la familia de Botella de Amor!, acercate a uno de los puntos de acopio y ayudanos a crear un mundo mas limpio y seguro...
+              </p>
+            </b>
+            <br><br><br><br><br><br>                
+            <a href="{% url 'eventos:principal' %}">
+                <div class="section-header">
+                    <p>Mira Nuestra <span> Galería Aquí</span></p>
+                </div>
+                </p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Fin Galería -->  
+
+  <br><br><br>
+
+  <!-- ======= Preguntas Frecuentes ======= -->
+<section id="preg-frec-home" class="testimonials section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div id="titulo" class="section-header">
+      <p>Preguntas<span> Frecuentes</span></p>
+    </div>
+    <br><br><br><br><br>
+    <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <div class="testimonial-item">
+              <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                  <div class="testimonial-content">
+                      <h3>Preguntas Frecuentes</h3>
+                      <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <a href="{% url 'fechas_importantes:principal' %}">¿Alguna vez te preguntaste cómo hacer una botella de amor?, o ¿cuánto ayudamos al mundo aportando nuestro granito de arena? Hacé click aquí para enterarte!</a>
+                          
+                      <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                  </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                  <img src="{% static 'assets/img/hero-img.jpg' %}" class="img-fluid testimonial-img" alt="" height="100" width="100">
+                  </div>
+              </div>
+              </div>
+          </div><!-- End item -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- End preguntas frecuentes -->
+
+<br><br><br>
+
+  <section id="acerc_de" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div id="titulo"  class="section-header">
+        <p id="acd">Acerca de <span>Nosotros</span></p>
+      </div>
+      <br><br><br><br><br>
+      <div class="row gy-4">
+        <div id="img-nt" class="col-lg-7 position-relative about-img" style="background-image: url({% static 'assets/img/ac-nos.jpg' %}) ;" data-aos="fade-up" data-aos-delay="150">
+        </div>
+        <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="content ps-0 ps-lg-5">
+            <p id="ace_nos" class="fst-italic">
+              “Botella de Amor” es un proyecto sin fines de lucro dedicado al desarrollo sostenible y mejoramiento de las condiciones de vida de las comunidades, con el objetivo principal de reducir los residuos plásticos en el ambiente, ya que son altamente contaminantes. Asimismo, se propone generar conciencia en la ciudadanía sobre la necesidad de reducir su uso y de consumir responsablemente...
+            </p>                
+            <a href="{% url 'acerca_nosotros:acerca_nosotros' %}">
+                <div class="section-header">
+                    <p>Leer<span> Más</span></p>
+                </div>
+                </p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End About Section -->  
+
+  <br><br><br>
+
+  <!-- ======= Contact Section ======= -->
+<section id="contacto_home" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div id="titulo" class="section-header">
+      <p>Necesitás ayuda? <span>Contáctanos</span></p>
+    </div>
+    <br><br><br><br>
+    <div class="row gy-4">
+
+      <div class="col-md-6">
+        <div class="info-item  d-flex align-items-center">
+          <i class="icon bi bi-map flex-shrink-0"></i>
+          <div>
+            <a href="https://www.google.com/maps/d/u/0/viewer?mid=1QBrPiv4TC7PHydND-XuRq2vPXHZBIkAE&ll=-27.44836777480339%2C-58.981751900000006&z=15" target="_blank"><h3>Puntos de Acopio de Botellas</h3></a>
+          </div>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item d-flex align-items-center">
+          <i class="icon bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Instagram/Facebook</h3>
+            <p>@botelladeamorresistencia</p>
+          </div>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item  d-flex align-items-center">
+          <i class="icon bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Teléfonos de Contacto</h3>
+            <b><p>Av.Italia y Av. Rissione </p></b>
+            <p>3624561165</p>
+            <b><p>Av. 25 de Mayo y Calle 5</p></b>
+            <p>3624026925</p>
+            <b><p>Salta y Echeverría</p></b>
+            <p>3624565562</p>
+            <b><p>Cacique y Ñaré y Av. de los Inmigrantes</p></b>
+            <p>1152607943</p>
+          </div>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item  d-flex align-items-center">
+          <i class="icon bi bi-share flex-shrink-0"></i>
+          <div>
+            <h3>Horarios de Atención</h3>
+            <div><strong>Lun-Sab:</strong> 11AM - 23PM;
+              <strong>Domingo:</strong> Cerrado
+            </div>
+          </div>
+        </div>
+      </div><!-- End Info Item --> 
+    </div>
+
+</div>
+</section>
+
+<br><br><br>
+
+{% endblock %}
+
+ 

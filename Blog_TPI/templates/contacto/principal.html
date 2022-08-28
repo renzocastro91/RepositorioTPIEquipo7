@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<br><br>
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div id="titulo" class="section-header">
+        <p>Necesitás ayuda? <span>Contáctanos</span></p>
+      </div>
+      <br><br><br>
+      <div class="row gy-4">
+
+        <div class="col-md-6">
+          <div class="info-item  d-flex align-items-center">
+            <i class="icon bi bi-map flex-shrink-0"></i>
+            <div>
+              <a href="https://www.google.com/maps/d/u/0/viewer?mid=1QBrPiv4TC7PHydND-XuRq2vPXHZBIkAE&ll=-27.44836777480339%2C-58.981751900000006&z=15" target="_blank"><h3>Puntos de Acopio de Botellas</h3></a>
+              <b><i><p>Descarga el mapa con los puntos de acopio <a  href="../../static/docs/Mapa_punto_acopio.png" download>Click Aquí</a></p></i></b>
+            </div>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+          <div class="info-item d-flex align-items-center">
+            <i class="icon bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Instagram/Facebook</h3>
+              <p>@botelladeamorresistencia</p>
+            </div>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+          <div class="info-item  d-flex align-items-center">
+            <i class="icon bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Teléfonos de Contacto</h3>
+              <b><p>Av.Italia y Av. Rissione </p></b>
+              <p>3624561165</p>
+              <b><p>Av. 25 de Mayo y Calle 5</p></b>
+              <p>3624026925</p>
+              <b><p>Salta y Echeverría</p></b>
+              <p>3624565562</p>
+              <b><p>Cacique y Ñaré y Av. de los Inmigrantes</p></b>
+              <p>1152607943</p>
+            </div>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+          <div class="info-item  d-flex align-items-center">
+            <i class="icon bi bi-share flex-shrink-0"></i>
+            <div>
+              <h3>Horarios de Atención</h3>
+              <div><strong>Lun-Sab:</strong> 11AM - 23PM;
+                <strong>Domingo:</strong> Cerrado
+              </div>
+            </div>
+          </div>
+        </div><!-- End Info Item --> 
+      </div>
+
+      <br><br><br><br><br>
+      
+    <!-- ======= Sección de Miembros ======= -->
+    <section id="chefs" class="chefs section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <p>Quiénes <span>Somos?</span></p>
+        </div>
+
+        <div class="row gy-2">
+        {% for n in contactos %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="{{n.recurso_foto.url}}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="{{n.url_insta}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{n.nombre_integrante}}</h4>
+              </div>
+            </div>
+          </div><!-- End Chefs Member -->
+          {% endfor %}
+          
+        </div>        
+      </div>
+    </section><!-- End Chefs Section -->
+    </div>
+  </section><!-- End Contact Section -->
+{% endblock %}
+
+

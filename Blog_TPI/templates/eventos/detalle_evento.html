@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+<section>
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                
+            </div>
+            {% if user.is_staff %}
+            <div class="col-2">
+                <a href="{% url 'admin:eventos_evento_change' evento.pk %}" target="_blank"><button id="boton-agregar">Modificar Evento</button></a> 
+            </div> 
+            {% endif %}
+        </div>
+    <div id="contenedor_noticia"  class="container">
+        
+          <div class="row">
+                <section class="post-publi-list">
+                    <div class="content">
+
+                        <article id="publi-id" class="post-publi">
+                            
+                                <h2 id="titulo-not">{{evento.titulo}}</h2>
+                                <br><br>
+                                <div class="post-publi-img-1">
+                                    <img id="imagen-noticia2" src ="{{evento.imagen.url}}"><br>                            
+                                <br>
+                                <span><b>Detalles del Evento</b> <br><br>
+                                <span><b>Fecha:</b> {{evento.fecha_evento}}</span><br>
+                                <br>
+                                <span><b>Modalidad:</b> {{evento.modalidad}}</span><br>
+                                <br>
+                                <span><b>Estado:</b> {{evento.estado}}</span><br>
+                                <br>
+                                <br><br>
+                                <p id="cuerpo">
+                                    {{evento.description}}
+                                </p>                         
+                    </div>
+                        </article>                
+            </div>
+                    
+                
+    </div>          
+                
+</section>
+
+{% endblock %}

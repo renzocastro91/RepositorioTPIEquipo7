@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+
+ <section>
+
+    <div class="container mt-5" id="contenedor">
+        <div id="tit-sr" class="section-header">
+            <p>Qué<span> Buscás?</span></p>
+          </div>
+        <br><br><br><br>
+        <input type="text" id="formulario" placeholder="Escribe aquí..."> 
+            <button class="btn btn-info mb-2" id="boton">Buscar</button> 
+        <br><br>
+        <ul id="resultados">
+        </ul>
+        <br><br>
+        <div id="imagen-pos">
+            <img id="imagen" src="../static/assets/img/busqueda.png" alt="">
+        </div>
+        
+    </div> 
+    
+</div>
+      
+</section>
+
+
+<br><br><br><br><br><br><br><br><br>
+
+
+
+{% endblock %}

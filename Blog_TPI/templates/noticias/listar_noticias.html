@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+<br><br><br><br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <div id="titulo" class="section-header">
+                    <p>Publi<span>caciones</span></p>
+                  </div>
+            </div>
+            {% if user.is_staff %}
+            <div class="col-2">
+                <a href="{% url 'admin:noticias_noticia_add' %}" target="_blank"><button id="boton-agregar">Agregar Publicación</button></a> 
+            </div> 
+            {% endif %}
+        </div>
+        <br><br><br>
+        <div id="caja-detalles">             
+            <a href="{% url 'noticias:listar_noticias' %}" id="tit-fil">Todas las publicaciones</a>
+
+            <div id="details-r">
+                <details >
+                    <summary id="tit-fil">
+                        Filtrar Por Fecha
+                    </summary>
+                    
+                        <form id="fecha" method="post">{% csrf_token %}
+                            Dia:
+                            <select name="dia">
+                                <option disabled>Seleccione un día</option>
+                                {% for n in dias %}
+                                <option value="{{n}}">{{n}}</option>
+                                {% endfor %}
+                            </select>
+                            Mes:
+                            <select name="mes">
+                                <option disabled>Seleccione un mes</option>
+                                {% for n in meses %}
+                                <option value="{{n}}">{{n}}</option>
+                                {% endfor %}
+                            </select>
+                            Año:
+                            <select name="anio">
+                                <option disabled>Seleccione un año</option>
+                                {% for n in anios %}
+                                <option value="{{n}}">{{n}}</option>
+                                {% endfor %}
+                            </select>
+                            <button id="boton-filtrar" type="submit">Filtrar</button>
+                        </form>
+                    </details>
+            </div>
+                   
+            <div id="details-r">                
+                <details>
+                    <summary id="tit-fil">
+                        Filtrar Por Título
+                    </summary>
+                    <form id="titulos" method="post">{% csrf_token %}
+                        <input id="caja-filter" type="text" name="filtrar_titulos" placeholder="Ingrese Título de noticia">
+                        <button id="boton-filtrar" type="submit">Filtrar</button>
+                    </form>
+
+                </details>
+            </div>
+
+            <div id="details-r">                
+                <details>
+                    <summary id="tit-fil">
+                        Filtrar Por Autor
+                    </summary>
+                    <form id="titulos" method="post">{% csrf_token %}
+                        <input id="caja-filter" type="text" name="filtrar_autor" placeholder="Ingrese Nombre de Autor">
+                        <button id="boton-filtrar" type="submit">Filtrar</button>
+                    </form>
+
+                </details>
+            </div>
+    </div>
+    <div id="contenedor_noticia"  class="container">
+        <div class="row">
+          {% if notis %}
+          {% for n in notis %}
+          <div class="col">
+              
+              <section class="post-list">
+                  <div class="content">
+
+                      <article class="post">
+                          <div class="post-header">
+                              <div class="post-img-1">
+                                  <img id="imagen-noticia" src ="{{n.imagen.url}}">
+                              </div>
+                          <div class="post-body">
+                              <span>{{n.creado}}</span> <br>
+                              <span><b>Autor:</b> {{n.autor}}</span>
+                              <h2 id="titulo-not1">{{n.titulo}}</h2>
+                              <br><br>
+                          <a href="{% url 'noticias:mostrar' n.pk %}" class="post-link">Leer más...</a>            
+                          </div>    
+                          </div>
+                      </article>
+              
+                  </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          
+          <div>
+            <br><br><br><br>
+            <i><h1 id="tit-ne">¡¡¡¡Ups...No se ha encontrado ninguna publicación!!!!</h1></i>
+            <img id="imagen-s" src="../../static/assets/img/noencontrado.png">
+          </div>
+
+        {% endif %}
+    </div>
+</section>  
+
+</section>
+
+
+{% endblock %}

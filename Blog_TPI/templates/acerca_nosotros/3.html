@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %} 
+<br><br><br>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+          <div id="titulo" class="section-header">
+            <p>Acerca de <span>Nosotros</span></p>
+          </div>
+          <br><br><br>
+          <div class="row gy-4">
+            <div class="col-lg-7 position-relative about-img" style="background-image: url({% static 'assets/img/about.png' %}) ;" data-aos="fade-up" data-aos-delay="150">
+              <div class="call-us position-absolute">
+                <h4>Instagram/Facebook</h4>
+                <p>@botelladeamorresistencia</p>
+              </div>
+            </div>
+            <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+              <div class="content ps-0 ps-lg-5">
+                <div class="section-header">
+                    <p>¿Qué <span>Hacemos?</span></p>
+                  </div>
+                <p class="fst-italic">
+                    Le damos trazabilidad a las BOTELLAS DE AMOR que son fruto del trabajo de miles de personas a lo largo y ancho del país que voluntariamente separan sus residuos plásticos, brindándoles una opción para que puedan ser recuperados. 
+                    Para ello, desde agosto del 2020, constituimos a Resistencia como punto de acopio, para juntar las botellas en un solo lugar y poder enviarlas a Buenos Aires donde eran recicladas. Actualmente, cerramos un acuerdo con una empresa local, Ecoqiru, que recibe las botellas, las recicla y las transforma en madera plástica en Margarita Belén.                  
+                </p>
+                <div class="section-header">
+                    <p>¿Cómo <span>Funciona?</span></p>
+                  </div>
+                <ul>
+                    <li><i class="bi bi-check2-all"></i> En una botella de plástico se colocan plásticos de un solo uso, cuidando que estén limpios y secos, y compactando para que entre la mayor cantidad posible..</li>
+                    <li><i class="bi bi-check2-all"></i> Se llevan las botellas completas a un punto de acopio</li>
+                    <li><i class="bi bi-check2-all"></i> Se envían a Ecoqiru, para ser procesadas y transformadas en madera plástica y luego en muebles y juegos de niños. </li>
+                    <li><i class="bi bi-check2-all"></i> Nos regresan un porcentaje de lo enviado en muebles y juegos de niños que serán donados a instituciones que lo necesiten en nuestra comunidad. </li> 
+                  </ul>
+                <div class="position-relative mt-4">
+                  
+                  <br><br>
+                  <img id="ru" src="{% static 'assets/img/about-2.jpg' %}" class="img-fluid" alt="">
+                  <a href="https://www.youtube.com/watch?v=b8If_ZerWsY" class="glightbox play-btn"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+
+{% endblock %}

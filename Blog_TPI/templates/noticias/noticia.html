@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+<section>
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                
+            </div>
+            {% if user.is_staff %}
+            <div class="col-2">
+                <a href="{% url 'admin:noticias_noticia_change' publi.pk %}" target="_blank"><button id="boton-agregar">Modificar Publicación</button></a> 
+            </div> 
+            {% endif %}
+        </div>
+    <div id="contenedor_noticia"  class="container">
+        
+          <div class="row">
+                <section class="post-publi-list">
+                    <div class="content">
+
+                        <article id="publi-id" class="post-publi">
+                            
+                                <h2 id="titulo-not">{{publi.titulo}}</h2>
+                                <br><br>
+                                <div class="post-publi-img-1">
+                                    <img id="imagen-noticia2" src ="{{publi.imagen.url}}"><br>                            
+                                <br>
+                                <span>{{publi.creado}}</span><br>
+                                <br>
+                                <span><b>Autor:</b> {{publi.autor}}</span>
+                                <br><br>
+                                <p id="cuerpo">
+                                    {{publi.cuerpo}}
+                                </p>
+                                           
+                            
+                       
+                          
+
+                            </div>
+                        </article>                
+                    </div>
+                    
+                
+                </div>
+
+                <div>
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'noticias:agregar_comentario' publi.pk %}">{% csrf_token %}
+                            <input id="comentario" type="text" name="coment" placeholder="Añadir un comentario" required>
+                            <button id="boton-comentario" type="submit">Comentar</button>
+                        </form>
+                    {% endif %}
+                </div>
+                <br><br><br>
+                <div>
+                    <details>
+                        <summary id="comentario-et">
+                            Comentarios
+                        </summary>
+                        <br>
+                        {% for x in publi.obtener_mis_comentarios %}
+                            <div id="caja-comentario">
+                                <div id="contenido-caja-comentario">
+                                    <b><p id="txt">{{x.usuario}}</p></b>
+                                    <p id="txt-1">{{x.creado}}</p>
+                                    <p id="txt-2">{{x.texto}}</p>
+                                </div>
+                            </div>
+                            <br>
+                        {% endfor %}
+                    </details>
+                </div> 
+
+
+               
+                
+            </section>
+    </div>
+  
+
+</section>
+{% endblock %}
+
+
+<p>Comentarios</p>
+                    

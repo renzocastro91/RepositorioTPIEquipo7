@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %} 
+<br><br><br>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+          <div id="titulo" class="section-header">
+            <p>Acerca de <span>Nosotros</span></p>
+          </div>
+          <br><br><br>
+      <div class="row gy-4">
+        <div class="col-lg-7 position-relative about-img" style="background-image: url({% static 'assets/img/about.png' %}) ;" data-aos="fade-up" data-aos-delay="150">
+          <div class="call-us position-absolute">
+            <h4>Instagram/Facebook</h4>
+            <p>@botelladeamorresistencia</p>
+          </div>
+        </div>
+        <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="content ps-0 ps-lg-5">
+            <p class="fst-italic">Se trata de un proyecto que tiene origen en Buenos Aires, a partir del cual se juntan botellas llenas de plásticos de un solo uso, limpios y secos, para producir madera plástica, en asociación con “4e Madera Plástica”, y finalmente construir muebles y juegos de niños. A través de estas acciones, se promueve el reciclaje, la reducción de desechos y la oportunidad de transformar basura en objetos útiles que pueden ser donados a comedores, escuelas y centros comunitarios.</p> 
+                <div class="section-header">
+                    <p>Obj<span>etivo</span></p>
+                </div>
+                </p>
+                <p class="fst-italic">Promover un cambio de hábito en la comunidad para reducir los residuos, impulsar el reciclaje, el consumo responsable y la economía circular. </p>
+                <a href="{% url 'acerca_nosotros:conocemos_mas2' %}"></p>
+                    <div class="section-header">
+                        <p>Leer<span> Más</span></p>
+                    </div>
+                    </p></a>
+            <div class="position-relative mt-4">
+              <img id="ru" src="{% static 'assets/img/about-2.jpg' %}" class="img-fluid" alt="">
+              <a href="https://www.youtube.com/watch?v=b8If_ZerWsY" class="glightbox play-btn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section><!-- End About Section -->
+{% endblock %}

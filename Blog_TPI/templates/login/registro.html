@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<section id="login" class="login">
+    <form class="formulario">
+    
+        <h1 class="fst-italic">Registrate</h1>
+         <div class="contenedor">
+         
+         <div class="input-contenedor">
+             <i class="fas fa-user icon"></i>
+             <input class="fst-italic" type="text" placeholder="Nombre Completo">
+             
+             </div>
+             
+             <div class="input-contenedor">
+             <i class="fas fa-envelope icon"></i>
+             <input class="fst-italic" type="text" placeholder="Correo Electronico">
+             
+             </div>
+             
+             <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+             <input class="fst-italic" type="password" placeholder="Contraseña">
+             
+             </div>
+             <input type="submit" value="Registrate" class="button">
+             <p class="fst-italic">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+             <p class="fst-italic">¿Ya tienes una cuenta?<a class="link" href="{% url 'login:principal' %}">Iniciar Sesion</a></p>
+         </div>
+        </form>
+    
+
+</section>
+
+{% endblock %}

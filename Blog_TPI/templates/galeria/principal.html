@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+ <!-- ======= Gallery Section ======= -->
+ <br><br>
+ <section id="gallery" class="gallery section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <div id="titulo" class="section-header">
+                    <p>Gale<span>ría</span></p>
+                  </div>
+            </div>
+            
+            {% if user.is_staff %}
+            <div class="col-2">
+                <a href="{% url 'admin:galeria_imagen_add' %}"><button id="boton-agregar">Agregar Fotos</button></a> 
+            </div> 
+            {% endif %}
+        </div>
+    </div>
+    <br><br><br>
+      <div class="gallery-slider swiper">
+        <div id="swiper-wrapper" class="swiper-wrapper align-items-center">
+          {% for n in imagenes %}
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{{n.recurso_imagen.url}}"><img src="{{n.recurso_imagen.url}}" class="img-fluid" alt=""></a></div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+    <br><br><br><br><br><br>
+  <br><br>
+
+  </section><!-- End Gallery Section -->
+
+{% endblock %}

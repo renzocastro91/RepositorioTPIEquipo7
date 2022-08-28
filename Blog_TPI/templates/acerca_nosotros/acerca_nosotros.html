@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+    <!-- ======= About Section ======= -->
+    <br><br><br>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+          <div id="titulo" class="section-header">
+            <p>Acerca de <span>Nosotros</span></p>
+          </div>
+          <br><br><br>
+          <div class="row gy-4">
+            <div class="col-lg-7 position-relative about-img" style="background-image: url({% static 'assets/img/about.png' %}) ;" data-aos="fade-up" data-aos-delay="150">
+              <div class="call-us position-absolute">
+                <h4>Instagram/Facebook</h4>
+                <p>@botelladeamorresistencia</p>
+              </div>
+            </div>
+            <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+              <div class="content ps-0 ps-lg-5">
+                <b><i><p>Descarga nuestras metas y objetivos! <a  href="../../static/docs/Proyecto Botella de Amor Resistencia.pdf" download>Click Aquí</a></p></i></b>
+                <br><br>
+                <p class="fst-italic">
+                    “Botella de Amor” es un proyecto sin fines de lucro dedicado al desarrollo sostenible y mejoramiento de las condiciones de vida de las comunidades, con el objetivo principal de reducir los residuos plásticos en el ambiente, ya que son altamente contaminantes. Asimismo, se propone generar conciencia en la ciudadanía sobre la necesidad de reducir su uso y de consumir responsablemente. 
+                </p>
+                <p class="fst-italic">
+                    Para ello, nos sumamos a las acciones realizada por la Fundación Botella de Amor que encontró una alternativa a los plásticos de difícil reciclaje, mediante una estrategia innovadora que consiste en llenar botellas con los residuos plásticos que se generan a diario. Al recuperar estos plásticos, evitamos que terminen en ecosistemas o en la basura donde tardan hasta 500 años en degradarse, combatimos el cambio climático reduciendo las emisiones de gases de efecto invernadero y le damos una solución a residuos que no tienen alternativas de reciclaje.
+                <a href="{% url 'acerca_nosotros:conocenos_mas' %}"></p>
+                    <div class="section-header">
+                        <p>Leer<span> Más</span></p>
+                    </div>
+                    </p></a>
+                <div class="position-relative mt-4">
+                  <img  id="ru" src="{% static 'assets/img/about-2.jpg' %}" class="img-fluid" alt="">
+                  <a href="https://www.youtube.com/watch?v=b8If_ZerWsY" class="glightbox play-btn"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+{% endblock %}

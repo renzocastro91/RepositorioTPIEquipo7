@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link href="{% static 'assets/css/preg_frec.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/publicaciones.css' %}" rel="stylesheet">
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div id="titulo" class="section-header">
+                        <p>Preguntas<span> Frecuentes</span></p>
+                      </div>
+                </div>
+                {% if user.is_staff %}
+                    <div class="col-2">
+                        <a href="{% url 'admin:fechas_importantes_pregunta_add' %}" target="_blank"><button id="boton-agregar">Agregar Pregunta</button></a> 
+                    </div> 
+            {% endif %}
+            </div>
+            </div>
+
+      <div class="container">
+  <div class="row">
+      <div class="container-faq">         
+        {% for n in preguntas %}
+          <div class="item-faq">
+              <div class="question">
+                  <b><h3>{{n.pregunta}}<span>P</span></h3></b>
+                  <div class="more"><i>+</i></div>
+              </div>
+              <div class="answer">
+                  <i><p>{{n.respuesta}}<span>R</span></p></i>
+              </div>
+              <br>
+          {% endfor %}
+          </div>
+          
+      </div>
+      
+  </div>
+  <b id="hs"><i><p>Descarga las preguntas frecuentes! <a  href="../../static/docs/botellas canje.pdf" download>Click Aquí</a></p></i></b>
+</div>   
+    </div>
+    </div>
+    <br><br><br><br><br>
+    <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+           {% for n in preguntas %}
+            <div class="swiper-slide">
+                <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-lg-6">
+                    <div class="testimonial-content">
+                        <h3>{{n.pregunta}}</h3>
+                        <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                            {{n.respuesta}}
+                        <i class="bi bi-quote quote-icon-right"></i>
+                        </p>
+                    </div>
+                    </div>
+                    <div class="col-lg-2 text-center">
+                    <img src="{% static 'assets/img/hero-img.jpg' %}" class="img-fluid testimonial-img" alt="">
+                    </div>
+                </div>
+                </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+  </section><!-- End Testimonials Section -->
+
+  <script src="{% static 'assets/js/preg_frec.js'%}"></script>
+{% endblock %}
+

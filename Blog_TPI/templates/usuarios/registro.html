@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<br><br><br>
+
+
+<section id="login">
+    <main role="main">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-9 mx-auto mb-5">
+              <form action="" method="post">{% csrf_token %}
+                <div id="registro">
+                    <h1 id="tit-reg"class="fst-italic">Registro</h1>
+                    <div id="registro-interno">
+                        <h1 class="fst-italic" style="color: black;">Formulario de Registro</h1>
+                        <div id="dob">
+                        <p id="formulario-r"><label id="tit-for" style="padding:20px;" for="id_first_name">Nombre:</label> <input id="caja-inp" type="text" name="first_name" required id="id_first_name"></p>
+                        <p id="formulario-r"><label id="tit-for" style="padding:20px;" for="id_last_name">Apellido:</label> <input id="caja-inp" type="text" name="last_name" required id="id_last_name"></p>
+                        <p id="formulario-r"><label id="tit-for1" style="padding:20px;" for="id_username">Nombre de usuario:</label> <input id="caja-inp" type="text" name="username" maxlength="150" autofocus required id="id_username"><br><span style="color:grey ;"  class="helptext">Obligatorio. Longitud máxima de 150 caracteres. Solo puede estar formado por letras, números y los caracteres @/./+/-/_.</span></p>
+                        <p id="formulario-r"><label id="tit-for2" style="padding:20px;" for="id_email">Correo:</label> <input id="caja-inp" type="email" name="email" required id="id_email"></p>
+                        <p id="formulario-r"><label id="tit-for3" style="padding:20px;" for="id_password1">Contraseña:</label> <input id="caja-inp" type="password" name="password1" required id="id_password1"></p>
+                        <p id="formulario-r"><label id="tit-for4" style="padding:20px;" for="id_password2">Confirmar Contraseña:</label> <input id="caja-inp" type="password" name="password2" required id="id_password2"></p>
+                        </div>
+                        
+                    </div>
+                    <p id="bot-conf"><input id="bot-s" type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
+                    <p id="vol-log" class="fst-italic">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+                    <p id="vol-log" class="fst-italic">¿Ya tienes una cuenta?<a id="volv-log1" class="link" href="{% url 'login' %}">     Iniciar Sesion</a></p>
+              </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </main>
+</section>
+
+
+{% endblock %}

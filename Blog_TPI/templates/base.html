@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	  
+		<title>Botella de Amor</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+	  
+		<!-- Favicons -->
+		<link id="logo_pr" href="{% static 'assets/img/logo.png'%}" rel="icon">
+		<link href="{% static 'assets/base/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+	  
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'base/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'base/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+		<link href="{% static 'base/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+		<link href="{% static 'base/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+		<link href="{% static 'base/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+	  
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+ 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+
+
+		<!-- Template Main CSS File -->
+		<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/header_footer.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/search.css' %}" rel="stylesheet">
+				
+</head>  
+<!--Header-->
+<body>
+<header id="header" class="header fixed-top d-flex align-items-center">
+		
+	<div class="container d-flex align-items-center justify-content-between">
+
+	  <a href="base.html" class="logo d-flex align-items-center me-auto me-lg-0">
+		<!-- Uncomment the line below if you also wish to use an image logo -->
+		<!-- <img src="assets/img/logo.png" alt=""> -->
+		
+		
+	  </a>
+
+	  <nav id="navbar" class="navbar">
+		<ul>
+		  <li><a href="{% url 'home' %}" ><img id="logo_pr" src="{% static 'assets/img/logo.png'%}" height="75" width="75"></li></a>
+		  <li><a href="{% url 'home' %}">INICIO</a></li>
+		  <li><a href="{% url 'noticias:listar_noticias' %}">PUBLICACIONES</a>
+	      <li><a href="{% url 'eventos:principal' %}">EVENTOS</a></li>
+		  <li><a href="{% url 'galeria:principal' %}">GALERIA</a></li>		  
+		  <li><a href="{% url 'fechas_importantes:principal' %}">PREGUNTAS FRECUENTES</a></li>
+		  <li><a href="{% url 'acerca_nosotros:acerca_nosotros' %}">ACERCA DE NOSOTROS</a></li>		  
+     	  <li><a href="{% url 'contacto:principal' %}">CONTACTO</a></li>
+
+		  <li><a href="{% url 'search' %}" class="boton"><i class="icon-buscar"></i></a></li>
+		  <li></li>
+		  <li></li>
+		  <li></li>
+		  <li></li>
+		  <li></li>  	
+		</ul>
+	  </nav><!-- .navbar -->
+	  {% if user.is_authenticated %}
+	  <span id="usuario">Hola!! {{user.username}}</span>
+	  
+	  <a class="btn-book-a-table" href="{% url 'logout' %}">LOGOUT</a>
+	  {% else %}
+	  <a class="btn-book-a-table" href="{% url 'login' %}">LOGIN</a>
+	  {% endif %}
+	  <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+	  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+	</div>
+</header>
+	
+{% block contenido %}
+    
+{% endblock %}
+
+	<!-- ======= Footer ======= -->
+<footer  id="footer" class="footer">
+
+		<div class="container" aling="left">
+		  <div class="row gy-3">
+			<div class="col-lg-3 col-md-6 d-flex">
+			  <i class="bi bi-geo-alt icon"></i>
+			  <div id="dir">
+				<a href="https://www.google.com/maps/d/u/0/viewer?mid=1QBrPiv4TC7PHydND-XuRq2vPXHZBIkAE&ll=-27.44836777480339%2C-58.981751900000006&z=15" target="_blank"><h4>Acopio de Botellas</h4></a>
+			  </div>
+	
+			</div>
+	
+			<div class="col-lg-3 col-md-6 footer-links d-flex">
+				<i class="bi bi-telephone icon"></i>
+				<div>
+				  <h4>Teléfono</h4>
+				  <p>
+					<strong>Teléfono:</strong> 3624561165<br>
+					<strong>Email:</strong> info@example.com<br>
+				  </p>
+				</div>
+			  </div>
+
+			<div class="col-lg-3 col-md-6 footer-links d-flex">
+			  <i class="bi bi-clock icon"></i>
+			  <div>
+				<h4>Horario de atención</h4>
+				<p>
+				  <strong>Lun-Sab: 11AM</strong> - 23PM<br>
+				  Domingo: Cerrado
+				</p>
+			  </div>
+			</div>
+	
+			<div class="col-lg-3 col-md-6 footer-links">
+			  <h4>Siguenos en</h4>
+			  <div class="social-links d-flex">
+				<a href="https://www.facebook.com/botelladeamorresistencia" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+				<a href="https://www.instagram.com/botelladeamorresistencia/?hl=es" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+			  </div>
+			</div>
+	
+		  </div>
+		</div>
+	
+		<div class="container">
+		  <div class="copyright">
+			&copy; Copyright <strong><span>Equipo 7 - Informatorio 2022</span></strong>. All Rights Reserved
+		  </div>
+		  <div class="credits">
+		  </div>
+		</div>
+	
+</footer><!-- End Footer -->
+	  <!-- End Footer -->
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+  <script src="{% static 'assets/js/search.js'%}"></script>
+</body>
+</html>
