@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'apps.eventos',
     'apps.fechas_importantes',
     'apps.galeria',
-    'apps.login',
 ]
 
 MIDDLEWARE = [
