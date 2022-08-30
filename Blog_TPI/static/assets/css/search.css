@@ -43,13 +43,6 @@ i.icon-buscar{
     padding: 30px;
 }
 
-a.boton:hover{
-    background: rgba(206, 18, 18, 0.8);
-   width: 30px;
-   height: 30px;
-}
-
-
 
 /*Responsive*/
 @media screen and (min-width:480px){
@@ -159,3 +152,5 @@ ul#resultados{ /*al lado izquierdo y abajo de los resultados */}
     text-align: center;
     margin-left: 400px;
 }
+
+buscar
