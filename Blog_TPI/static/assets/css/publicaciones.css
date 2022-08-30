@@ -31,7 +31,7 @@ ines (145 sloc)  2.57 KB
 #imagen-noticia{
   border-radius: 15px;
   height: 350px;
-  width: 400px;
+  width: 500px;
   box-shadow: 1px 2px 6px 1px rgba(0,0,0.2);
 }
 
@@ -53,7 +53,13 @@ ines (145 sloc)  2.57 KB
 
 #cuerpo{
   font-family: 'Secular One', sans-serif;
-  font-size: 21px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+#cuerpo-publi{
+  margin-left: 30px;
+margin-right: 30px;
 }
 /*-Sección de publicaciones-*/
 
